@@ -1,0 +1,116 @@
+@import url("https://use.typekit.net/lik6wyg.css");
+
+@keyframes transitionLoad {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+:root {
+  --dark-bg: #12182B;
+  --spacing: 350px;
+
+  font-family: montserrat, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+main {
+  width: 100vw;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding-top: 120px;
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+header {
+  background: var(--dark-bg);
+  grid-column: 2 / span 10;
+  font-size: 2.5rem;
+  padding: 2rem;
+  margin-bottom: var(--spacing);
+  border-radius: 8px;
+  animation: transitionLoad 2s;
+}
+
+section {
+    grid-column: 2 / 10;
+    padding: 1rem;
+    background: var(--dark-bg);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+    border-radius: 8px;
+    animation: slidein 3.5s;
+  }
+
+footer {
+    grid-column: 1 / 13;
+    padding: 0.5rem;
+    background: var(--dark-bg);
+    display: grid;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* adjust the number of columns to match your grid */
+    /* other styles */
+}
+
+.footer-item {
+    /* adjust this to your needs */
+    grid-column: 3 / 12;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  display: inline-block; /* or inline */
+  margin-right: 10px; /* add some space between the items */
+}
+
+  @media screen and (max-width: 800px) {
+    header, section {
+      grid-column: 2 / span 1; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
